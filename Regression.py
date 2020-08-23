@@ -10,82 +10,35 @@ import seaborn as sns
 get_ipython().run_line_magic('matplotlib', 'inline')
 
 
-# ## Get the Data
-# 
-# We'll work with the Ecommerce Customers csv file from the company. It has Customer info, suchas Email, Address, and their color Avatar. Then it also has numerical value columns:
-# 
-# * Avg. Session Length: Average session of in-store style advice sessions.
-# * Time on App: Average time spent on App in minutes
-# * Time on Website: Average time spent on Website in minutes
-# * Length of Membership: How many years the customer has been a member. 
-# 
-# ** Read in the Ecommerce Customers csv file as a DataFrame called customers.**
 
-# In[2]:
 
 
 df = pd.read_csv("Ecommerce Customers")
 
 
-# **Check the head of customers, and check out its info() and describe() methods.**
-
-# In[8]:
-
-
 df.head()
 
-
-# In[6]:
 
 
 df.describe()
 
 
-# In[7]:
-
 
 df.info()
 
 
-# ## Exploratory Data Analysis
-# 
-# **Let's explore the data!**
-# 
-# For the rest of the exercise we'll only be using the numerical data of the csv file.
-# ___
-# **Use seaborn to create a jointplot to compare the Time on Website and Yearly Amount Spent columns. Does the correlation make sense?**
 
-# In[10]:
 
 
 sns.jointplot('Time on Website', 'Yearly Amount Spent', data = df )
 
 
-# In[281]:
-
-
-
-
-
-# ** Do the same but with the Time on App column instead. **
-
-# In[11]:
 
 
 sns.jointplot('Time on App', 'Yearly Amount Spent', data = df )
 
 
-# ** Use jointplot to create a 2D hex bin plot comparing Time on App and Length of Membership.**
 
-# In[283]:
-
-
-
-
-
-# **Let's explore these types of relationships across the entire data set. Use [pairplot](https://stanford.edu/~mwaskom/software/seaborn/tutorial/axis_grids.html#plotting-pairwise-relationships-with-pairgrid-and-pairplot) to recreate the plot below.(Don't worry about the the colors)**
-
-# In[12]:
 
 
 sns.pairplot(df)
